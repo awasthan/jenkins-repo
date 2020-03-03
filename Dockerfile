@@ -1,6 +1,7 @@
 FROM jenkins/jenkins:lts
 USER root
 RUN apt install apt-transport-https ca-certificates curl gnupg-agent
+RUN apt-get install software-properties-common
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 RUN apt install docker-ce
