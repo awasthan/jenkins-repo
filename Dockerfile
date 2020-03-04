@@ -1,5 +1,5 @@
 ARG BASE_IMAGE=default-route-openshift-image-registry.apps.prod3.os.fyre.ibm.com/ace/ibm-ace-mqclient-server-prod:11.0.0.7-r1-amd64
-FROM $BASE_IMAGE 
+FROM $BASE_IMAGE AS ace-builder
 ENV LICENSE accept
 FROM jenkins/jenkins:latest
 
@@ -22,4 +22,6 @@ COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 # volume for Jenkins settings
 VOLUME /var/jenkins_home
+COPY --from=ace-builder /home/aceuser/ /home/aceuser/
+COPY --from=ace-builder /opt /opt/
 EXPOSE 8080
