@@ -18,3 +18,4 @@ COPY default-user.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 # volume for Jenkins settings
 VOLUME /var/jenkins_home
+EXPOSE 8080
