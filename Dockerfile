@@ -1,7 +1,7 @@
 FROM jenkins/jenkins:latest
 
 # install jenkins plugins
-COPY ./jenkins-plugins /usr/share/jenkins/plugins
+COPY ./jenkins-plugin /usr/share/jenkins/plugins
 RUN while read i ; \ 
 		do /usr/local/bin/install-plugins.sh $i ; \
 	done < /usr/share/jenkins/plugins
