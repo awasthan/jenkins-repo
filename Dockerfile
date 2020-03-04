@@ -15,6 +15,7 @@ ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 # Jenkins runs all grovy files from init.groovy.d dir
 # use this for creating default admin user
 COPY default-user.groovy /usr/share/jenkins/ref/init.groovy.d/
+COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 # volume for Jenkins settings
 VOLUME /var/jenkins_home
