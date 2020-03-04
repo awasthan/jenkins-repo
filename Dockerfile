@@ -1,3 +1,6 @@
+ARG BASE_IMAGE=default-route-openshift-image-registry.apps.prod3.os.fyre.ibm.com/ace/ibm-ace-mqclient-server-prod:11.0.0.7-r1-amd64
+FROM $BASE_IMAGE 
+ENV LICENSE accept
 FROM jenkins/jenkins:latest
 
 # install jenkins plugins
